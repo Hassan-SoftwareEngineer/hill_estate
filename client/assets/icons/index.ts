@@ -5,6 +5,7 @@ import notification from "./notification.svg";
 import wallet from "./wallet.svg";
 import checked from "./checked.svg";
 import bedroom from "./bedroom.svg";
+import separator from "./separator.svg"; 
 
 export { 
     group,
@@ -13,6 +14,7 @@ export {
     notification,
     wallet,
     checked,
-    bedroom 
+    bedroom,
+    separator
 };
 
