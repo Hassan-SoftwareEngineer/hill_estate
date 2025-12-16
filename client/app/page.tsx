@@ -1,9 +1,8 @@
+import Hero from "@/components/organisms/Hero";
 
 const Home = () => {
   return (
-    <div>
-      hello world 
-    </div>
+    <Hero />
   )
 }
 

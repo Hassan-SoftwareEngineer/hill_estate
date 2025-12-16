@@ -9,25 +9,26 @@
 } */
 
 @theme {
-  ----color-surface-primary : #0C091D;
-  ----color-surface-secondary : #0C091D;
+  --color-surface-primary : #0C091D;
+  --color-surface-secondary : #922A8E;
   --color-surface-accent : #2B2937;
 
   --color-foreground-primary : #FFFFFF;
   --color-foreground-secondary : #000000; 
   --color-foreground-accent : #932A8E;
-  --color-foreground-personalized : #932A8E;
+  --color-foreground-personalized : #2E61CE;
 
   --color-action-primary : linear-gradient(135deg, #833293, #385DAC);
   --color-action-secondary :  #3A5DAC;
   --color-action-accent : #FFFFFF;
+  --color-action-personalized: #2E61CE;
 
-  ----color-icon---color-primary : #932A8E;
-  ----color-icon---color-secondary : #385DAC;
+  --color-icon---color-primary : #932A8E;
+  --color-icon---color-secondary : #385DAC;
 
-  ----color-border-primary : #8E2A8A;
-  ----color-border-secondary : linear-gradient(135deg, #385DAC, #922A8E);
-
+  --color-border-primary : #FFFFFF;
+  --color-border-secondary : linear-gradient(135deg, #385DAC, #922A8E);
+  --color-border-accent : #8E2A8A;
 }
 .dark {
   --background: oklch(0.145 0 0);
@@ -148,10 +149,19 @@
   body {
     @apply bg-background text-foreground;
   }
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
   .max-width {
     @apply max-w-7xl mx-auto;
   }
   .max-width-sm {
     @apply max-w-6xl mx-auto;
+  }
+  .main-heading {
+    @apply text-4xl font-bold text-center mb-6 bg-linear-to-r from-foreground-personalized to-foreground-accent bg-clip-text text-transparent;
+  }
+  .carousal-button {
+    @apply h-8 w-8 rounded-full bg-action-personalized transition-opacity;
   }
 }
