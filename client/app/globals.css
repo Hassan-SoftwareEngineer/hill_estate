@@ -152,6 +152,9 @@
   .flex-center {
     @apply flex justify-center items-center;
   }
+  .flex-between-center {
+    @apply flex justify-between items-center;
+  }
   .max-width {
     @apply max-w-7xl mx-auto;
   }
@@ -163,5 +166,11 @@
   }
   .carousal-button {
     @apply h-8 w-8 rounded-full bg-action-personalized transition-opacity;
+  }
+  .documents {
+    @apply w-full p-4 md:p-6 pr-8 md:pr-10 border-3 border-border-accent rounded-sm bg-surface-primary;
+  }
+  .document-card {
+    @apply bg-surface-accent border border-border-primary py-4 pl-4 pr-6 rounded-sm mb-3;
   }
 }

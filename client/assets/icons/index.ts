@@ -6,6 +6,9 @@ import wallet from "./wallet.svg";
 import checked from "./checked.svg";
 import bedroom from "./bedroom.svg";
 import separator from "./separator.svg"; 
+import document from "./document.svg";
+import download from "./download.svg";
+import view from "./view.svg";
 
 export { 
     group,
@@ -15,6 +18,9 @@ export {
     wallet,
     checked,
     bedroom,
-    separator
+    separator,
+    document,
+    download,
+    view
 };
 
