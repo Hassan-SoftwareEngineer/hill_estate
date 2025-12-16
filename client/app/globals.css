@@ -20,11 +20,11 @@
 
   --color-action-primary : linear-gradient(135deg, #833293, #385DAC);
   --color-action-secondary :  #3A5DAC;
-  --color-action-accent : #FFFFFF;
+  --color-action-accent : #922A8E;
   --color-action-personalized: #2E61CE;
 
-  --color-icon---color-primary : #932A8E;
-  --color-icon---color-secondary : #385DAC;
+  --color-icon-color-primary : #932A8E;
+  --color-icon-color-secondary : #385DAC;
 
   --color-border-primary : #FFFFFF;
   --color-border-secondary : linear-gradient(135deg, #385DAC, #922A8E);
@@ -180,5 +180,8 @@
   }
   .gradient-question {
     background: linear-gradient(to right, #932A8E, #3A5DAC);
+  }
+  .description {
+    @apply text-foreground-secondary font-medium leading-relaxed opacity-70 text-justify text-sm tracking-tight;
   }
 }

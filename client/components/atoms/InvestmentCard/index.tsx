@@ -8,7 +8,7 @@ const InvestmentCard : React.FC <InvestmentCardProps> = ({
   return (
     <div>
       <h3 className='font-bold text-foreground-secondary mb-1'> {title} </h3>   
-      <p className='text-foreground-secondary font-medium leading-relaxed opacity-70 text-justify text-sm tracking-tight'> {description} </p>   
+      <p className='description'> {description} </p>   
     </div>
   )
 }
