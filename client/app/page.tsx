@@ -1,4 +1,5 @@
 import Documents from "@/components/molecules/Documents";
+import Investment from "@/components/molecules/Investment";
 import Hero from "@/components/organisms/Hero";
 
 const Home = () => {
@@ -6,6 +7,7 @@ const Home = () => {
     <>
     <Hero />
     <Documents />
+    <Investment />
      </>
   )
 }
