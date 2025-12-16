@@ -163,7 +163,7 @@
   }
   
   .max-width-xs {
-    @apply max-w-5xl mx-auto;
+    @apply max-w-4xl mx-auto;
   }
 
   .main-heading {
@@ -177,5 +177,8 @@
   }
   .document-card {
     @apply bg-surface-accent border border-border-primary py-4 pl-4 pr-6 rounded-sm mb-3;
+  }
+  .gradient-question {
+    background: linear-gradient(to right, #932A8E, #3A5DAC);
   }
 }
