@@ -34,8 +34,8 @@ const Hero : React.FC = () => {
   
 
   return (
-   <section className="w-full pt-6">
-    <h1 className="main-heading">
+   <section className="w-full">
+    <h1 className="text-2xl md:text-4xl font-bold text-center bg-linear-to-r from-foreground-personalized to-foreground-accent bg-clip-text text-transparent my-2 md:my-3 lg:my-4">
       Hill Estate
     </h1>
     <Carousel setApi={setApi} className="w-full relative">
@@ -47,7 +47,7 @@ const Hero : React.FC = () => {
                 alt={slide.title}
                 width={800}
                 height={537}
-                className="w-full h-120 object-cover rounded-xl"
+                className="w-full h-64 md:h-120 object-cover rounded-xl"
               />
               <div className="absolute top-0 left-1/2 -translate-x-1/2 flex flex-col">
                 <CarousalCard title={slide.title} isBorder={false} />
@@ -56,20 +56,18 @@ const Hero : React.FC = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <div className="flex justify-center gap-3 -mt-4 relative z-10">
+        <div className="flex justify-center gap-2 -mt-4 md:-mt-6 relative z-10">
           <button 
-            onClick={() => api?.scrollPrev()}
-            disabled={!canScrollPrev}
-            className={`carousal-button flex-center ${!canScrollPrev ? 'opacity-70' : 'opacity-100'}`}
+            onClick={() => canScrollPrev && api?.scrollPrev()}
+            className={`w-10 h-10 md:w-12 md:h-12 rounded-full gradient-primary flex-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 backdrop-blur-sm border border-white/20 ${!canScrollPrev ? 'opacity-80' : 'opacity-100'}`}
           >
-            <MdChevronLeft className="text-white text-3xl" />
+            <MdChevronLeft className="text-white text-lg md:text-2xl" />
           </button>
           <button 
-            onClick={() => api?.scrollNext()}
-            disabled={!canScrollNext}
-            className={`carousal-button flex-center ${!canScrollNext ? 'opacity-70' : 'opacity-100'}`}
+            onClick={() => canScrollNext && api?.scrollNext()}
+            className={`w-10 h-10 md:w-12 md:h-12 rounded-full gradient-primary flex-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 backdrop-blur-sm border border-white/20 ${!canScrollNext ? 'opacity-80' : 'opacity-100'}`}
           >
-            <MdChevronRight className="text-white text-3xl" />
+            <MdChevronRight className="text-white text-lg md:text-2xl" />
           </button>
         </div>
       </Carousel>

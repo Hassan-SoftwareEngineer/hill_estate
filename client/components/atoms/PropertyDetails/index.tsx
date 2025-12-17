@@ -4,35 +4,31 @@ import { DETAILS, tabs } from "./constants";
 
 
 const PropertyDetails = () => {
-  const activeIndex = 0;
 
   return (
     <section className="w-full">
 
-      <div className="relative border-b-2 border-border-accent max-w-fit w-full">
-        <div className="flex gap-10 px-4 md:px-6 xl:px-8 text-sm font-medium">
+      <div className="relative max-w-fit w-full">
+        <div className="flex gap-4 md:gap-10 px-2 md:px-6 xl:px-8 text-xs md:text-sm font-medium">
           {tabs.map((tab, index) => (
             <button
-              key={tab}
-              className={`relative pb-2 text-foreground-secondary`}
+              key={index}
+              className={`relative pb-1.5 md:pb-2 text-foreground-secondary`}
             >
               {tab}
-
-              {index === activeIndex && (
-                <span className="absolute left-0 -bottom-0.5 h-0.5 w-full" style={{background: 'linear-gradient(to right, #932A8E, #3A5DAC)'}} />
-              )}
             </button>
           ))}
         </div>
+        <div className="h-0.5 w-full" style={{background: 'linear-gradient(to right, #932A8E, #3A5DAC)'}} />
       </div>
 
 
-      <h1 className="mt-4 font-semibold text-foreground-secondary">
+      <h1 className="text-sm md:text-base font-semibold text-foreground-secondary mt-2 mb-1">
         Two Bedroom Apartment in Executive Residences 1
       </h1>
 
 
-      <div className="mt-3 flex flex-wrap items-center gap-8 text-sm text-slate-600">
+      <div className="flex flex-wrap items-center gap-3 md:gap-8 text-xs md:text-sm text-slate-600">
     {DETAILS.map(({ Icon, title, color }) => (
           <div key={title} className="flex items-center gap-2">
             

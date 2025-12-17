@@ -174,10 +174,10 @@
     @apply h-8 w-8 rounded-full bg-action-personalized transition-opacity;
   }
   .documents {
-    @apply w-full p-4 md:p-6 pr-8 md:pr-10 border-3 border-border-accent rounded-sm bg-surface-primary;
+    @apply w-full p-4 md:p-6 md:pr-10 border-3 border-border-accent rounded-sm bg-surface-primary;
   }
   .document-card {
-    @apply bg-surface-accent border border-border-primary py-4 pl-4 pr-6 rounded-sm mb-3;
+    @apply bg-surface-accent border border-border-primary py-4 pl-3 md:pl-4 pr-3 md:pr-6 rounded-sm mb-3;
   }
   .gradient-primary {
     background: linear-gradient(to right, #932A8E, #3A5DAC);
@@ -185,11 +185,14 @@
   .gradient-secondary {
     background: linear-gradient(to right,#3A5DAC ,#932A8E);
   }
+  .gradient-header {
+    background: linear-gradient(135deg, #000000, #374151, #1e3a8a);
+  }
   .description {
     @apply text-foreground-secondary font-medium leading-relaxed opacity-70 text-justify text-sm tracking-tight;
   }
   .footer-title {
-    @apply text-xs text-foreground-primary font-medium capitalize;
+    @apply text-xs max-md:max-w-80 max-md:mx-auto leading-relaxed text-foreground-primary font-medium capitalize text-center;
   }
   .footer-social-icon {
     @apply w-8 h-8 bg-transparent border border-foreground-primary rounded-full hover:bg-foreground-primary hover:text-surface-primary transition-colors;
@@ -202,5 +205,40 @@
  }
  .area-to-pledge-value {
   @apply  px-4 py-1.5 border-[0.5px] border-border-primary rounded-sm w-full;
+ }
+
+ /* Custom Toast Styles */
+ .toast-custom {
+   box-shadow: 0 8px 32px rgba(147, 42, 142, 0.3), 0 4px 16px rgba(56, 93, 172, 0.2) !important;
+   border: 1px solid rgba(147, 42, 142, 0.4) !important;
+   backdrop-filter: blur(8px) !important;
+   animation: slideInTop 0.3s ease-out !important;
+ }
+
+ [data-sonner-toast][data-type="success"] {
+   background: linear-gradient(135deg, rgba(147, 42, 142, 0.95), rgba(56, 93, 172, 0.95)) !important;
+   color: white !important;
+   border-color: rgba(147, 42, 142, 0.6) !important;
+ }
+
+ [data-sonner-toast][data-type="error"] {
+   background: linear-gradient(135deg, rgba(220, 38, 127, 0.95), rgba(185, 28, 28, 0.95)) !important;
+   color: white !important;
+   border-color: rgba(220, 38, 127, 0.6) !important;
+ }
+
+ [data-sonner-toast] [data-icon] {
+   filter: brightness(1.2) !important;
+ }
+
+ @keyframes slideInTop {
+   from {
+     transform: translateY(-100%);
+     opacity: 0;
+   }
+   to {
+     transform: translateY(0);
+     opacity: 1;
+   }
  }
 }

@@ -5,11 +5,11 @@ import { FOOTER_CONTACTS } from './constants';
 
 const FooterContacts : React.FC = () => {
   return (
-    <div className='flex items-center gap-6'>
+    <div className='grid md:grid-cols-3 grid-cols-2 gap-4 max-md:px-4 max-w-lg'>
         {
             FOOTER_CONTACTS.map((item, index : number) => (
-                <div key={index} className={`flex items-center gap-3 ${index === 2 ? 'ml-12' : ''}`}>
-          <div className='w-8 h-8 bg-transparent border border-foreground-primary rounded-full flex-center'>
+                <div key={index} className={`flex items-center gap-3 ${index === 2 && 'md:ml-12 xl:ml-8 max-md:mb-2'}`}>
+          <div className='w-8 h-8 min-w-8 min-h-8 bg-transparent border border-foreground-primary rounded-full flex-center'>
             {index === 2 ? (
               <IoLocationSharp className='text-foreground-primary' size={16} />
             ) : (
@@ -17,8 +17,8 @@ const FooterContacts : React.FC = () => {
             )}
           </div>
           <div>
-            <h4 className='footer-title'>{item.title}</h4>
-            <p className='text-sm text-foreground-primary opacity-80 mt-0.5'>{item.contact}</p>
+            <h4 className='footer-title text-start'>{item.title}</h4>
+            <p className='text-sm text-foreground-primary opacity-80 mt-0.5 whitespace-nowrap'>{item.contact}</p>
           </div>
         </div>
             ))

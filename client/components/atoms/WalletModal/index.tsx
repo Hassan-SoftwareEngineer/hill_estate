@@ -1,6 +1,6 @@
 // components/atoms/WalletModal/index.tsx
 import { useWallet } from '@/hooks/useWallet';
-import React from 'react';
+import React, { useEffect } from 'react';
 
 interface WalletModalProps {
   isOpen: boolean;
@@ -18,6 +18,17 @@ const WalletModal: React.FC<WalletModalProps> = ({ isOpen, onClose, onConnect, o
     isMetaMaskInstalled
   } = useWallet();
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
   const formatAddress = (address: string) => {
@@ -26,11 +37,11 @@ const WalletModal: React.FC<WalletModalProps> = ({ isOpen, onClose, onConnect, o
 
   return (
     <div 
-      className="fixed inset-0 bg-black bg-opacity-20 flex items-center justify-center z-50"
+      className="fixed inset-0 bg-surface-accent/50 flex items-center justify-center z-50 overflow-hidden"
       onClick={onClose}
     >
       <div 
-        className="bg-surface-primary border border-border-accent rounded-lg p-6 max-w-md w-full mx-4"
+        className="bg-surface-primary border border-border-accent rounded-lg shadow-xl p-6 max-w-md w-full mx-4"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex justify-between items-center mb-4">
@@ -39,7 +50,7 @@ const WalletModal: React.FC<WalletModalProps> = ({ isOpen, onClose, onConnect, o
           </h2>
           <button
             onClick={onClose}
-            className="text-foreground-primary hover:text-foreground-accent"
+            className="text-foreground-primary hover:text-foreground-accent cursor-pointer text-xl"
           >
             ✕
           </button>
@@ -47,15 +58,15 @@ const WalletModal: React.FC<WalletModalProps> = ({ isOpen, onClose, onConnect, o
 
         <div className="space-y-4">
           {!isConnected ? (
-            <div className="text-center py-6">
+            <div className="text-center pt-4 pb-0">
               <div className="text-4xl mb-4">🔗</div>
-              <p className="text-foreground-primary mb-4">
+              <p className="text-foreground-primary mb-6">
                 Connect your wallet to view your tokens
               </p>
               {!isMetaMaskInstalled ? (
                 <button
                   onClick={() => window.open('https://metamask.io/download/', '_blank')}
-                  className="w-full px-4 py-2 bg-orange-600 text-white rounded hover:bg-orange-700 transition-colors"
+                  className="w-full px-4 py-3 bg-action-secondary text-foreground-primary rounded-lg cursor-pointer font-medium"
                 >
                   Install MetaMask
                 </button>
@@ -63,7 +74,7 @@ const WalletModal: React.FC<WalletModalProps> = ({ isOpen, onClose, onConnect, o
                 <button
                   onClick={onConnect}
                   disabled={isConnecting}
-                  className="w-full px-4 py-2 gradient-primary text-white rounded hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full px-4 py-3 gradient-primary text-foreground-primary rounded disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer font-medium"
                 >
                   {isConnecting ? 'Connecting...' : 'Connect Wallet'}
                 </button>
@@ -73,7 +84,7 @@ const WalletModal: React.FC<WalletModalProps> = ({ isOpen, onClose, onConnect, o
             <>
               {/* Wallet Address */}
               <div>
-                <label className="block text-sm font-medium text-foreground-primary mb-1">
+                <label className="block text-sm font-medium text-foreground-primary mb-2">
                   Wallet Address
                 </label>
                 <div className="bg-surface-accent p-3 rounded border border-border-primary">
@@ -85,7 +96,7 @@ const WalletModal: React.FC<WalletModalProps> = ({ isOpen, onClose, onConnect, o
 
               {/* Tokens Section */}
               <div>
-                <label className="block text-sm font-medium text-foreground-primary mb-1">
+                <label className="block text-sm font-medium text-foreground-primary mb-2">
                   Your Tokens
                 </label>
                 <div className="bg-surface-accent p-4 rounded border border-border-primary">
@@ -102,14 +113,14 @@ const WalletModal: React.FC<WalletModalProps> = ({ isOpen, onClose, onConnect, o
               <div className="flex gap-3 pt-4">
                 <button
                   onClick={onClose}
-                  className="flex-1 px-4 py-2 bg-surface-accent text-foreground-primary rounded hover:bg-surface-secondary transition-colors"
+                  className="flex-1 px-4 py-2 bg-surface-accent text-foreground-primary rounded cursor-pointer font-medium"
                 >
                   Close
                 </button>
                 <button
                   onClick={onDisconnect}
                   disabled={isDisconnecting}
-                  className="flex-1 px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="flex-1 px-4 py-2 gradient-primary text-foreground-primary rounded disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer font-medium"
                 >
                   {isDisconnecting ? 'Disconnecting...' : 'Disconnect'}
                 </button>

@@ -11,7 +11,7 @@ const PropertyManager = () => {
   return (
     <>
       <PropertySelector area={area} setArea={setArea} pricePerSqft={pricePerSqft} />
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
         <PriceCard />
         <AreaToPledge area={area} pricePerSqft={pricePerSqft} />
       </div>

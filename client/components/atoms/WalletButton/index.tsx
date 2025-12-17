@@ -3,11 +3,12 @@ import { wallet } from '@/assets/icons';
 import { useWallet } from '@/hooks/useWallet';
 import Image from 'next/image';
 import React, { useState } from 'react';
+import { toast } from 'sonner';
 import WalletModal from '../WalletModal';
 
 const WalletButton: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [toast, setToast] = useState<{ message: string; type: 'success' | 'error' } | null>(null);
+
   const { 
     isConnected, 
     walletAddress,
@@ -31,7 +32,7 @@ const WalletButton: React.FC = () => {
       <button
         onClick={handleWalletClick}
         disabled={isConnecting || isDisconnecting}
-        className="flex items-center gap-2 px-3 py-2 rounded-lg bg-surface-accent cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+        className="flex items-center gap-2 pl-3 py-2 rounded-lg bg-transparent cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
       >
         <Image src={wallet} alt="Wallet" width={20} height={20} />
         <span className="text-sm text-foreground-primary">
@@ -39,13 +40,7 @@ const WalletButton: React.FC = () => {
         </span>
       </button>
 
-      {toast && (
-        <div className={`fixed top-4 right-4 p-3 rounded-lg shadow-lg text-white text-sm z-50 ${
-          toast.type === 'success' ? 'bg-green-600' : 'bg-red-600'
-        }`}>
-          {toast.message}
-        </div>
-      )}
+
 
       <WalletModal 
         isOpen={isModalOpen} 
@@ -54,24 +49,20 @@ const WalletButton: React.FC = () => {
           try {
             await connectWallet();
             setIsModalOpen(false);
-            setToast({ message: 'Wallet connected successfully!', type: 'success' });
-            setTimeout(() => setToast(null), 3000);
+            toast.success('Connected!');
           } catch (error) {
             const message = error instanceof Error ? error.message : 'Failed to connect wallet';
-            setToast({ message, type: 'error' });
-            setTimeout(() => setToast(null), 3000);
+            toast.error(message);
           }
         }}
         onDisconnect={async () => {
           try {
             await disconnectWallet();
             setIsModalOpen(false);
-            setToast({ message: 'Wallet disconnected successfully!', type: 'success' });
-            setTimeout(() => setToast(null), 3000);
+            toast.success('Disconnected!');
           } catch (error) {
             const message = error instanceof Error ? error.message : 'Failed to disconnect wallet';
-            setToast({ message, type: 'error' });
-            setTimeout(() => setToast(null), 3000);
+            toast.error(message);
           }
         }}
       />

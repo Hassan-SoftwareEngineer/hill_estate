@@ -5,7 +5,7 @@ import { DOCUMENTS } from './constants';
 const Documents : React.FC = () => {
   return (
     <section className='documents'>
-      <h1 className='text-xl font-medium text-foreground-primary mb-4'>   Documents </h1>
+      <h1 className='text-xl font-medium text-foreground-primary'>   Documents </h1>
       {
         DOCUMENTS.map((doc, index) => (
           <div key={index} className='my-2'>
