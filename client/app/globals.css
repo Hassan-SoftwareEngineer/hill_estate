@@ -184,4 +184,10 @@
   .description {
     @apply text-foreground-secondary font-medium leading-relaxed opacity-70 text-justify text-sm tracking-tight;
   }
+  .footer-title {
+    @apply text-xs text-foreground-primary font-medium capitalize;
+  }
+  .footer-social-icon {
+    @apply w-8 h-8 bg-transparent border border-foreground-primary rounded-full hover:bg-foreground-primary hover:text-surface-primary transition-colors;
+  }
 }

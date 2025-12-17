@@ -2,6 +2,7 @@ import PropertyDescription from "@/components/atoms/PropertyDescription";
 import Documents from "@/components/molecules/Documents";
 import Investment from "@/components/molecules/Investment";
 import Location from "@/components/molecules/Location";
+import Process from "@/components/molecules/Process";
 import Hero from "@/components/organisms/Hero";
 
 const Home = () => {
@@ -9,6 +10,7 @@ const Home = () => {
     <>
     <Hero />
     <Documents />
+    <Process />
     <Investment />
     <PropertyDescription />
     <Location />

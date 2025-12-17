@@ -12,12 +12,15 @@ import separator from "./separator.svg";
 import view from "./view.svg";
 import wallet from "./wallet.svg";
 import whatsapp from "./whatsapp.svg";
+import process from "./process.svg";
+import processItem from "./processItem.svg";
 
 export {
     bedroom, phone as call, checked, document,
     download, email, group,
     location,
     money,
-    notification, separator, view, wallet, whatsapp
+    notification, separator, view, wallet, whatsapp,
+    process, processItem
 };
 
