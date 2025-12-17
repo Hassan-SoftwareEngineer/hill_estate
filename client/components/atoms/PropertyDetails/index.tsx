@@ -19,7 +19,7 @@ const PropertyDetails = () => {
               {tab}
 
               {index === activeIndex && (
-                <span className="absolute left-0 -bottom-px h-px w-full bg-border-secondary" />
+                <span className="absolute left-0 -bottom-0.5 h-0.5 w-full" style={{background: 'linear-gradient(to right, #932A8E, #3A5DAC)'}} />
               )}
             </button>
           ))}

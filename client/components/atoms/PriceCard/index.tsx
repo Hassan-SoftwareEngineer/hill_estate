@@ -5,7 +5,7 @@ import { PRICE_DETAILS } from "./constants";
 
 const PriceCard: React.FC = () => {
   return (
-    <div className=" gradient-question price-card">
+    <div className="gradient-primary price-card">
       <div className="flex flex-col gap-4">
         {PRICE_DETAILS.map((item) => (
           <div key={item.label} className="flex justify-between text-xs md:text-sm font-medium">
