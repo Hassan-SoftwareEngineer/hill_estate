@@ -5,7 +5,7 @@ import download from "./download.svg";
 import email from "./email.svg";
 import group from "./group.svg";
 import location from "./location.svg";
-import money from "./money.svg";
+import money from "./money.png";
 import notification from "./notification.svg";
 import phone from "./phone.svg";
 import separator from "./separator.svg";
