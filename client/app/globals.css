@@ -178,8 +178,11 @@
   .document-card {
     @apply bg-surface-accent border border-border-primary py-4 pl-4 pr-6 rounded-sm mb-3;
   }
-  .gradient-question {
+  .gradient-primary {
     background: linear-gradient(to right, #932A8E, #3A5DAC);
+  }
+  .gradient-secondary {
+    background: linear-gradient(to right,#3A5DAC ,#932A8E);
   }
   .description {
     @apply text-foreground-secondary font-medium leading-relaxed opacity-70 text-justify text-sm tracking-tight;
@@ -190,4 +193,8 @@
   .footer-social-icon {
     @apply w-8 h-8 bg-transparent border border-foreground-primary rounded-full hover:bg-foreground-primary hover:text-surface-primary transition-colors;
   }
+  .price-card {
+  @apply text-foreground-primary rounded-lg pl-3 pr-5 py-8 md:py-12 xl:py-16 shadow-lg max-w-sm;
+ }
+
 }

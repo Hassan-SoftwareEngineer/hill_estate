@@ -14,6 +14,7 @@ import wallet from "./wallet.svg";
 import whatsapp from "./whatsapp.svg";
 import process from "./process.svg";
 import processItem from "./processItem.svg";
+import handshake from "./handshake.svg";
 
 export {
     bedroom, phone as call, checked, document,
@@ -21,6 +22,7 @@ export {
     location,
     money,
     notification, separator, view, wallet, whatsapp,
-    process, processItem
+    process, processItem,
+    handshake
 };
 

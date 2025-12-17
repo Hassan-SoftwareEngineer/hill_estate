@@ -6,7 +6,7 @@ import React from 'react';
 
 const Location : React.FC = () => {
   return (
-    <section>
+    <section className='pb-6 md:pb-8 xl:pb-10'>
       <h1 className='text-xl font-bold text-foreground-secondary mb-2'> Location </h1>
       <div className='flex gap-1 items-center'>
         <Image src={location} alt='Location' height={15} width={15} />

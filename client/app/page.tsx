@@ -1,5 +1,7 @@
+import PriceCard from "@/components/atoms/PriceCard";
 import PropertyDescription from "@/components/atoms/PropertyDescription";
 import PropertyDetails from "@/components/atoms/PropertyDetails";
+import PropertySelector from "@/components/atoms/PropertySelector";
 import Documents from "@/components/molecules/Documents";
 import Investment from "@/components/molecules/Investment";
 import Location from "@/components/molecules/Location";
@@ -11,6 +13,8 @@ const Home = () => {
     <>
     <Hero />
     <PropertyDetails />
+    <PropertySelector />
+    <PriceCard />
     <Documents />
     <Process />
     <Investment />
