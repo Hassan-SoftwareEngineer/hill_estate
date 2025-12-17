@@ -2,15 +2,13 @@
 import { handshake } from "@/assets/icons";
 import { Slider } from "@/components/ui/slider";
 import Image from "next/image";
-import { useState } from "react";
+import { PropertySelectorProps } from "./types";
 
-export default function PropertySelector() {
-  const [area, setArea] = useState(100); // initial area
-  const pricePerSqft = 60000; // PKR 60,000 per sqft
 
-  // Slider gradient style
+export default function PropertySelector({ area, setArea, pricePerSqft }: PropertySelectorProps) {
+
   const sliderGradient = {
-    background: `linear-gradient(to right, #932A8E 0%, #3A5DAC ${(area / 1000) * 100}%, #2B2937 ${(area / 1000) * 100}%, #2B2937 100%)`,
+    background: `linear-gradient(to right, #932A8E 0%, #3A5DAC ${(area / 100) * 100}%, #2B2937 ${(area / 100) * 100}%, #2B2937 100%)`,
   };
 
   return (
@@ -33,14 +31,15 @@ export default function PropertySelector() {
              </p>
         </div>
         <p className="py-2 px-3 rounded-full border border-border-primary ml-auto w-fit text-xs mt-8">
-            100 sq.ft @1.6M
+            100 sq.ft @6.0M
         </p>
       <div className="mt-3">
         <div className="flex-1 relative">
           <Slider
             value={[area]}
-            max={1000}
-            step={100}
+            max={100}
+            min={1}
+            step={1}
             onValueChange={(val) => setArea(val[0])}
             className="w-full h-2 rounded-lg"
             style={sliderGradient}
@@ -48,8 +47,8 @@ export default function PropertySelector() {
         </div>
         
         <div className="flex justify-between text-xs text-gray-400 mt-3">
-          <span>0 sq.ft</span>
-          <span>1000 sq.ft</span>
+          <span>1 sq.ft</span>
+          <span>100 sq.ft</span>
         </div>
         
 
