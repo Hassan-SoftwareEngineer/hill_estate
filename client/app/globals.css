@@ -12,6 +12,7 @@
   --color-surface-primary : #0C091D;
   --color-surface-secondary : #922A8E;
   --color-surface-accent : #2B2937;
+  --color-surface-personalized : #FFFFFF;
 
   --color-foreground-primary : #FFFFFF;
   --color-foreground-secondary : #000000; 
@@ -194,7 +195,12 @@
     @apply w-8 h-8 bg-transparent border border-foreground-primary rounded-full hover:bg-foreground-primary hover:text-surface-primary transition-colors;
   }
   .price-card {
-  @apply text-foreground-primary rounded-lg pl-3 pr-5 py-8 md:py-12 xl:py-16 shadow-lg max-w-sm;
+  @apply text-foreground-primary rounded-lg pl-3 pr-5 py-8 md:py-12 xl:py-16 shadow-lg;
  }
-
+ .area-to-value-label {
+  @apply text-sm text-foreground-primary font-semibold;
+ }
+ .area-to-pledge-value {
+  @apply  px-4 py-1.5 border-[0.5px] border-border-primary rounded-sm w-full;
+ }
 }

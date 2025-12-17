@@ -26,7 +26,11 @@ const WalletModal: React.FC<WalletModalProps> = ({ isOpen, onClose, onConnect, o
 
   return (
     <div 
+<<<<<<< Updated upstream
       className="fixed inset-0 bg-black/50 flex items-center justify-center z-50"
+=======
+      className="fixed inset-0 bg-black bg-opacity-20 flex items-center justify-center z-50"
+>>>>>>> Stashed changes
       onClick={onClose}
     >
       <div 
@@ -39,7 +43,11 @@ const WalletModal: React.FC<WalletModalProps> = ({ isOpen, onClose, onConnect, o
           </h2>
           <button
             onClick={onClose}
+<<<<<<< Updated upstream
             className="text-foreground-primary hover:text-foreground-accent cursor-pointer"
+=======
+            className="text-foreground-primary hover:text-foreground-accent"
+>>>>>>> Stashed changes
           >
             ✕
           </button>
@@ -55,7 +63,11 @@ const WalletModal: React.FC<WalletModalProps> = ({ isOpen, onClose, onConnect, o
               {!isMetaMaskInstalled ? (
                 <button
                   onClick={() => window.open('https://metamask.io/download/', '_blank')}
+<<<<<<< Updated upstream
                   className="w-full px-4 py-2 bg-orange-600 text-white rounded hover:bg-orange-700 transition-colors cursor-pointer"
+=======
+                  className="w-full px-4 py-2 bg-orange-600 text-white rounded hover:bg-orange-700 transition-colors"
+>>>>>>> Stashed changes
                 >
                   Install MetaMask
                 </button>
@@ -63,7 +75,11 @@ const WalletModal: React.FC<WalletModalProps> = ({ isOpen, onClose, onConnect, o
                 <button
                   onClick={onConnect}
                   disabled={isConnecting}
+<<<<<<< Updated upstream
                   className="w-full px-4 py-2 gradient-primary text-white rounded hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+=======
+                  className="w-full px-4 py-2 gradient-primary text-white rounded hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
+>>>>>>> Stashed changes
                 >
                   {isConnecting ? 'Connecting...' : 'Connect Wallet'}
                 </button>
@@ -102,14 +118,22 @@ const WalletModal: React.FC<WalletModalProps> = ({ isOpen, onClose, onConnect, o
               <div className="flex gap-3 pt-4">
                 <button
                   onClick={onClose}
+<<<<<<< Updated upstream
                   className="flex-1 px-4 py-2 bg-surface-accent text-foreground-primary rounded hover:bg-surface-secondary transition-colors cursor-pointer"
+=======
+                  className="flex-1 px-4 py-2 bg-surface-accent text-foreground-primary rounded hover:bg-surface-secondary transition-colors"
+>>>>>>> Stashed changes
                 >
                   Close
                 </button>
                 <button
                   onClick={onDisconnect}
                   disabled={isDisconnecting}
+<<<<<<< Updated upstream
                   className="flex-1 px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+=======
+                  className="flex-1 px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+>>>>>>> Stashed changes
                 >
                   {isDisconnecting ? 'Disconnecting...' : 'Disconnect'}
                 </button>
