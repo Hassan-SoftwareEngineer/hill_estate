@@ -1,6 +1,5 @@
 import Footer from "@/components/organisms/Footer";
 import Header from "@/components/organisms/Header";
-import QueryProvider from "@/providers/QueryProvider";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -30,13 +29,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <QueryProvider>
-          <Header />
-          <main className="min-h-screen max-width-xs flex flex-col gap-4 md:gap-6 lg:gap-8">
-            {children}
-          </main>
-          <Footer/>
-        </QueryProvider>
+        <Header />
+        <main className="min-h-screen max-width-xs flex flex-col gap-4 md:gap-6 lg:gap-8">
+          {children}
+        </main>
+        <Footer/>
       </body>
     </html>
   );
